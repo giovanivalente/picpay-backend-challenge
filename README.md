@@ -6,7 +6,7 @@ Informações sobre o desafio: https://github.com/PicPay/picpay-desafio-backend
 
 ## Tecnologias Utilizadas
 
-- **Linguagem/Framework**: [Python, Django]
+- **Linguagem/Framework**: [Python 3.12, Django, Django Rest Framework]
 - **Banco de Dados**: [PostgreSQL]
 - **Containerização**: [Docker, Docker Compose]
 - **Testes**: [Pytest]
@@ -15,6 +15,8 @@ Informações sobre o desafio: https://github.com/PicPay/picpay-desafio-backend
 ## Como Executar o Projeto
 
 ## Pré-requisitos
+
+- **Pyenv**: https://github.com/pyenv/pyenv-installer
 
 ## Passos
 
