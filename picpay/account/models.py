@@ -4,10 +4,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 
-from picpay.utils.entities import AccountEntity
-
-
-class Account(TimeStampedModel, AbstractBaseUser, AccountEntity):
+class Account(TimeStampedModel, AbstractBaseUser):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False, unique=True)
     document_number = models.CharField(max_length=14, unique=True)
     first_name = models.CharField(max_length=50)

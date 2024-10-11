@@ -3,7 +3,6 @@
 import django.db.models.deletion
 import django_extensions.db.fields
 import uuid
-from decimal import Decimal
 from django.conf import settings
 from django.db import migrations, models
 
@@ -18,16 +17,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Wallet',
+            name='Transaction',
             fields=[
                 ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
                 ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('balance', models.DecimalField(decimal_places=2, default=Decimal('0'), max_digits=10)),
-                ('account', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='account_wallet', to=settings.AUTH_USER_MODEL)),
+                ('amount', models.DecimalField(decimal_places=2, max_digits=20)),
+                ('receiver', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='receiver_transactions', to=settings.AUTH_USER_MODEL)),
+                ('sender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sender_transactions', to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'db_table': 'WALLET',
+                'db_table': 'TRANSACTION',
             },
         ),
     ]
