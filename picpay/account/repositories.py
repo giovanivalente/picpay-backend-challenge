@@ -3,8 +3,8 @@ from dataclasses import asdict
 from django.db.models import Q
 
 from picpay.account.dto import AccountData
-from picpay.account.entities import AccountEntity
 from picpay.account.models import Account
+from picpay.utils.entities import AccountEntity
 
 
 class AccountRepository:

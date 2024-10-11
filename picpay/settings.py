@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # My apps
     'picpay.account',
+    'picpay.wallet'
 ]
 
 MIDDLEWARE = [
