@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'rest_framework',
     # My apps
     'picpay.account',
-    'picpay.wallet'
+    'picpay.wallet',
+    'picpay.transaction',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'account.Account'
+
+RAW_PF_DOCUMENT_LEN = 11
+RAW_PJ_DOCUMENT_LEN = 14

@@ -124,6 +124,17 @@ files = [
 toml = ["tomli"]
 
 [[package]]
+name = "cpf-cnpj-validate"
+version = "1.4"
+description = "Python module for brazilian register numbers for persons (CPF) and companies (CNPJ) and mask generator to string or int CPF/CNPJ."
+optional = false
+python-versions = "*"
+files = [
+    {file = "cpf_cnpj_validate-1.4-py3-none-any.whl", hash = "sha256:e30e125a1c4d4749b80e7f87ea192ccbcfbafb6c85b27833ecffc41da9df47ff"},
+    {file = "cpf_cnpj_validate-1.4.tar.gz", hash = "sha256:611dfc08bf3c1c040ce47294d1c04e77e12b6b2d4e1029cc7a5ee2d2079c0ece"},
+]
+
+[[package]]
 name = "django"
 version = "5.1.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -541,4 +552,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.12.*"
-content-hash = "50edecc67e8b276451a61fb7ce28cdfa98fb58fc0f1d12ef1e4c2fe7e529932f"
+content-hash = "1523360aade9ea22dc75a666433997773005818169473b4c60a470ed58598f24"

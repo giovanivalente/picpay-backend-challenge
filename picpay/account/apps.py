@@ -7,4 +7,4 @@ class AccountConfig(AppConfig):
 
     @classmethod
     def ready(cls):
-        import picpay.account.signals  #noqa F401
+        import picpay.account.signals  # noqa F401

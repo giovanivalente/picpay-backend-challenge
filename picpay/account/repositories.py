@@ -1,5 +1,7 @@
 from dataclasses import asdict
+from typing import Optional
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q
 
 from picpay.account.dto import AccountData
@@ -21,3 +23,9 @@ class AccountRepository:
         ).exists()
 
         return account_exist
+
+    def get_account_by_document_number(self, document_number: str) -> Optional[Account]:
+        try:
+            return self.model.objects.get(document_number=document_number)
+        except ObjectDoesNotExist:
+            return None

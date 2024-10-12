@@ -1,9 +1,8 @@
 from dataclasses import dataclass
+from decimal import Decimal
 
 
 @dataclass(frozen=True)
-class AccountData:
+class DepositData:
     document_number: str
-    name: str
-    email: str
-    password: str
+    amount: Decimal

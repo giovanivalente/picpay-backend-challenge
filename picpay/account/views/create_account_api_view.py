@@ -5,14 +5,14 @@ from rest_framework.views import APIView
 
 from picpay.account.dto import AccountData
 from picpay.account.factories import AccountFactory
-from picpay.account.serializers import CreateAccountInputSerializer, CreateAccountOutputSerializer
+from picpay.account.serializers import CreateAccountInputSerializer, CreateAccountOutputBaseSerializer
 
 
 class CreateAccountAPIView(APIView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.input_serializer = CreateAccountInputSerializer
-        self.output_serializer = CreateAccountOutputSerializer
+        self.output_serializer = CreateAccountOutputBaseSerializer
         self.account_service = AccountFactory.make_create_account()
 
     def post(self, request: Request) -> Response:
@@ -21,8 +21,7 @@ class CreateAccountAPIView(APIView):
 
         account_data = AccountData(
             document_number=serializer.validated_data['document_number'],
-            first_name=serializer.validated_data['first_name'],
-            last_name=serializer.validated_data['last_name'],
+            name=serializer.validated_data['name'],
             email=serializer.validated_data['email'],
             password=serializer.validated_data['password'],
         )
